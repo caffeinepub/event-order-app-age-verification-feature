@@ -1,0 +1,11 @@
+{
+  "frontend/src/App.tsx": "Main application component that orchestrates the event ordering app with cart management, age verification modal, and theme provider integration.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for backend integration including product management and age-verified checkout mutations.",
+  "frontend/src/components/Header.tsx": "Application header with branding and shopping cart button displaying item count badge.",
+  "frontend/src/components/Footer.tsx": "Footer component with copyright attribution and responsible drinking disclaimer.",
+  "frontend/src/components/ProductCatalog.tsx": "Product grid displaying event menu items with alcohol badges, pricing, and add-to-cart functionality.",
+  "frontend/src/components/Cart.tsx": "Shopping cart sidebar with item management, quantity controls, and checkout button with alcohol warning alerts.",
+  "frontend/src/components/AgeVerificationModal.tsx": "Age verification dialog that enforces 21+ requirement for alcohol purchases with success/failure states.",
+  "frontend/src/store/cartStore.ts": "Zustand store managing cart state with persistence, including add/remove/update operations and total price calculation.",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring purple-blue primary palette for both light and dark modes."
+}
