@@ -90,11 +90,14 @@ export class ExternalBlob {
     }
 }
 export interface backendInterface {
+    _initializeAccessControlWithSecret(secret: string): Promise<void>;
     addProduct(id: bigint, category: string, containsAlcohol: boolean): Promise<void>;
     verifyAgeAndCheckout(cartItems: Array<[bigint, bigint]>, isAgeVerified: boolean): Promise<void>;
 }
 export class Backend implements backendInterface {
     constructor(private actor: ActorSubclass<_SERVICE>, private _uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, private _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, private processError?: (error: unknown) => never){}
+    async _initializeAccessControlWithSecret(_secret: string): Promise<void> { return; }
+
     async addProduct(arg0: bigint, arg1: string, arg2: boolean): Promise<void> {
         if (this.processError) {
             try {
