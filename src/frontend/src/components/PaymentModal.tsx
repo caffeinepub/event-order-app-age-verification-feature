@@ -9,7 +9,15 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { AlertCircle, CheckCircle2, CreditCard, Lock, X } from "lucide-react";
+import {
+  AlertCircle,
+  Bell,
+  CheckCircle2,
+  CreditCard,
+  Lock,
+  MapPin,
+  X,
+} from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { useCartStore } from "../store/cartStore";
@@ -88,7 +96,7 @@ export default function PaymentModal({
       setTimeout(() => {
         onPaymentSuccess();
         handleClose();
-      }, 2000);
+      }, 4000);
     } else {
       setPaymentStatus("error");
       setErrorMsg(
@@ -149,7 +157,7 @@ export default function PaymentModal({
               key="success"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="flex flex-col items-center gap-4 px-6 py-10 text-center"
+              className="flex flex-col items-center gap-5 px-6 py-10 text-center"
               data-ocid="payment.success_state"
             >
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
@@ -157,16 +165,44 @@ export default function PaymentModal({
               </div>
               <div>
                 <h3 className="text-xl font-bold text-foreground">
-                  Payment Successful!
+                  Order Placed!
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Your order has been placed. Thank you!
+                  Your payment of{" "}
+                  <span className="font-semibold text-foreground">
+                    ${total.toFixed(2)}
+                  </span>{" "}
+                  was successful.
                 </p>
               </div>
-              <div className="rounded-lg bg-green-50 px-4 py-2">
-                <p className="text-sm font-medium text-green-800">
-                  ${total.toFixed(2)} charged
-                </p>
+
+              {/* Notification info */}
+              <div className="w-full space-y-3">
+                <div className="flex items-start gap-3 rounded-xl bg-blue-50 border border-blue-100 px-4 py-3 text-left">
+                  <Bell className="h-5 w-5 text-blue-600 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-sm font-semibold text-blue-900">
+                      You'll be notified when it's ready
+                    </p>
+                    <p className="text-xs text-blue-700 mt-0.5">
+                      We'll send you a notification as soon as your order is
+                      prepared.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 rounded-xl bg-amber-50 border border-amber-100 px-4 py-3 text-left">
+                  <MapPin className="h-5 w-5 text-amber-600 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-sm font-semibold text-amber-900">
+                      Pick up at the venue counter
+                    </p>
+                    <p className="text-xs text-amber-700 mt-0.5">
+                      Head to the pickup area when you receive your
+                      notification.
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ) : (

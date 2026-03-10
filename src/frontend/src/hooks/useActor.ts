@@ -27,10 +27,13 @@ export function useActor() {
 
       const actor = await createActorWithConfig(actorOptions);
       const adminToken = getSecretParameter("caffeineAdminToken") || "";
+      const actorWithInit = actor as unknown as {
+        _initializeAccessControlWithSecret: (token: string) => Promise<void>;
+      };
       if (
-        typeof (actor as any)._initializeAccessControlWithSecret === "function"
+        typeof actorWithInit._initializeAccessControlWithSecret === "function"
       ) {
-        await (actor as any)._initializeAccessControlWithSecret(adminToken);
+        await actorWithInit._initializeAccessControlWithSecret(adminToken);
       }
       return actor;
     },
