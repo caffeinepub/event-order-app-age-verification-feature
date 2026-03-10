@@ -1,33 +1,24 @@
-# Event Order App - Age Verification Feature
+# Event Order App
 
-## Overview
-Add age verification functionality to an existing event ordering application to restrict alcohol purchases to users 21 years or older.
+## Current State
+App allows users to select a venue, browse venue-specific menus (food, drinks, alcohol), add items to a cart, verify age for alcohol, and place orders. The checkout flow currently only does age verification -- no payment is collected.
 
-## Core Features
+## Requested Changes (Diff)
 
-### Age Verification System
-- Display an age verification prompt when users attempt to checkout with alcohol items in their cart
-- Require users to confirm they are 21 years or older before proceeding
-- Block checkout process if user declines age verification or fails to confirm eligibility
-- Only trigger verification when alcohol products are present in the order
+### Add
+- Stripe payment step after age verification in the checkout flow
+- A payment form where users enter card details to pay for their order
+- Order confirmation with total amount charged
 
-### Product Classification
-- Products must be categorized to identify which items contain alcohol
-- System should automatically detect alcohol items in the cart to trigger verification
+### Modify
+- AgeVerificationModal: after successful age verification (or if no alcohol), redirect to a payment step instead of immediately completing the order
+- Checkout flow: age verification -> Stripe payment -> order confirmation
 
-### Checkout Flow
-- Standard checkout process for non-alcohol orders remains unchanged
-- For orders containing alcohol: display verification prompt before payment processing
-- Successful age verification allows user to proceed to payment
-- Failed or declined verification prevents checkout completion and displays appropriate message
+### Remove
+- Nothing removed
 
-## Backend Requirements
-- Store product information including alcohol classification
-- Track which products require age verification
-- Process orders only after successful age verification for alcohol purchases
-
-## Frontend Requirements
-- Age verification modal/prompt interface
-- Cart analysis to detect alcohol items
-- Conditional checkout flow based on cart contents
-- Clear messaging for verification requirements and restrictions
+## Implementation Plan
+1. Select Stripe component
+2. Generate updated backend with Stripe payment intent support
+3. Update AgeVerificationModal and add a PaymentModal component
+4. Wire the checkout flow: cart -> age check (if needed) -> Stripe payment -> success
