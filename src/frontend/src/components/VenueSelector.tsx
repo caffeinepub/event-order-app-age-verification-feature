@@ -286,7 +286,7 @@ export default function VenueSelector({ onSelectVenue }: VenueSelectorProps) {
                     </p>
                     <p className="mb-2 flex items-center gap-1 text-xs text-muted-foreground">
                       <MapPin className="h-3 w-3" />
-                      {venue.city}
+                      {venue.address}
                     </p>
                     <p className="flex-1 text-sm text-muted-foreground">
                       {venue.description}
