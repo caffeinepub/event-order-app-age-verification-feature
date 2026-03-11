@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Locate, MapPin, Navigation } from "lucide-react";
+import { ArrowRight, Calendar, Locate, MapPin, Navigation } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { type Venue, getDistanceKm, venues } from "../data/venues";
@@ -271,6 +271,13 @@ export default function VenueSelector({ onSelectVenue }: VenueSelectorProps) {
                         {venue.name}
                       </h3>
                     </div>
+                    <p className="mb-0.5 text-sm font-semibold text-warm-white leading-snug">
+                      {venue.eventName}
+                    </p>
+                    <p className="mb-2 flex items-center gap-1 text-xs text-muted-foreground">
+                      <Calendar className="h-3 w-3" />
+                      {venue.eventDate}
+                    </p>
                     <p
                       className="mb-1 text-sm font-medium"
                       style={{ color: venue.accentColor }}

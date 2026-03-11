@@ -1,24 +1,23 @@
-# Event Order App
+# Event Order
 
 ## Current State
-App allows users to select a venue, browse venue-specific menus (food, drinks, alcohol), add items to a cart, verify age for alcohol, and place orders. The checkout flow currently only does age verification -- no payment is collected.
+Venues display name, tagline, city, description, and menu item counts on cards in VenueSelector. The Venue interface has no event name or date fields.
 
 ## Requested Changes (Diff)
 
 ### Add
-- Stripe payment step after age verification in the checkout flow
-- A payment form where users enter card details to pay for their order
-- Order confirmation with total amount charged
+- `eventName` (string) and `eventDate` (string) fields to the `Venue` interface in venues.ts
+- Assign unique, realistic event names and upcoming 2026 dates to every venue in the venues array
+- Display event name and date prominently on each venue card in VenueSelector (below the venue name, above the tagline, styled with a calendar icon)
 
 ### Modify
-- AgeVerificationModal: after successful age verification (or if no alcohol), redirect to a payment step instead of immediately completing the order
-- Checkout flow: age verification -> Stripe payment -> order confirmation
+- VenueSelector venue card body to show eventName and eventDate with a Calendar icon
+- venues.ts Venue interface to include the two new fields
 
 ### Remove
 - Nothing removed
 
 ## Implementation Plan
-1. Select Stripe component
-2. Generate updated backend with Stripe payment intent support
-3. Update AgeVerificationModal and add a PaymentModal component
-4. Wire the checkout flow: cart -> age check (if needed) -> Stripe payment -> success
+1. Add `eventName: string` and `eventDate: string` to the Venue interface in venues.ts
+2. Add eventName and eventDate to every venue object in the venues array (realistic names and 2026 dates)
+3. Update VenueSelector card body to display eventName and eventDate with a Calendar icon, styled clearly

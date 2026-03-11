@@ -27,6 +27,8 @@ export interface Venue {
   city: string;
   address: string;
   coordinates: { lat: number; lng: number };
+  eventName: string;
+  eventDate: string;
   items: MenuItem[];
 }
 
@@ -873,6 +875,8 @@ export const venues: Venue[] = [
     city: "Lake Charles, LA",
     address: "2550 Golden Nugget Blvd, Lake Charles, LA 70601",
     coordinates: { lat: 30.2016, lng: -93.1871 },
+    eventName: "Golden Nugget Casino Night Gala",
+    eventDate: "April 19, 2026",
     items: goldenNuggetItems,
   },
   // Northeast
@@ -888,6 +892,8 @@ export const venues: Venue[] = [
     city: "New York, NY",
     address: "230 5th Ave, New York, NY 10001",
     coordinates: { lat: 40.7451, lng: -73.9874 },
+    eventName: "Manhattan Mixology Night",
+    eventDate: "April 25, 2026",
     items: rooftopLoungeItems,
   },
   {
@@ -902,6 +908,8 @@ export const venues: Venue[] = [
     city: "Boston, MA",
     address: "270 Tremont St, Boston, MA 02116",
     coordinates: { lat: 42.3519, lng: -71.0643 },
+    eventName: "The Phantom Returns",
+    eventDate: "May 2, 2026",
     items: theaterItems,
   },
   {
@@ -916,6 +924,8 @@ export const venues: Venue[] = [
     city: "Philadelphia, PA",
     address: "1 S Broad St, Philadelphia, PA 19107",
     coordinates: { lat: 39.9526, lng: -75.1652 },
+    eventName: "Spring Garden Brunch Festival",
+    eventDate: "May 16, 2026",
     items: gardenTerraceItems,
   },
   // Southeast
@@ -931,6 +941,8 @@ export const venues: Venue[] = [
     city: "Atlanta, GA",
     address: "1 State Farm Dr, Atlanta, GA 30339",
     coordinates: { lat: 33.7573, lng: -84.4007 },
+    eventName: "Atlanta Sound Wave Festival",
+    eventDate: "May 23, 2026",
     items: concertArenaItems,
   },
   {
@@ -945,6 +957,8 @@ export const venues: Venue[] = [
     city: "Miami, FL",
     address: "1601 Collins Ave, Miami Beach, FL 33139",
     coordinates: { lat: 25.7617, lng: -80.1918 },
+    eventName: "Miami Sunset Rooftop Party",
+    eventDate: "June 6, 2026",
     items: rooftopLoungeItems,
   },
   {
@@ -959,6 +973,8 @@ export const venues: Venue[] = [
     city: "Charlotte, NC",
     address: "800 S Mint St, Charlotte, NC 28202",
     coordinates: { lat: 35.2258, lng: -80.8528 },
+    eventName: "Panthers vs Cowboys",
+    eventDate: "September 13, 2026",
     items: stadiumItems,
   },
   // Louisiana (featured)
@@ -974,6 +990,8 @@ export const venues: Venue[] = [
     city: "New Orleans, LA",
     address: "700 Tchoupitoulas St, New Orleans, LA 70130",
     coordinates: { lat: 29.9443, lng: -90.0702 },
+    eventName: "New Orleans Rooftop Cocktail Night",
+    eventDate: "April 11, 2026",
     items: rooftopLoungeItems,
   },
   {
@@ -988,6 +1006,8 @@ export const venues: Venue[] = [
     city: "New Orleans, LA",
     address: "1501 Dave Dixon Dr, New Orleans, LA 70113",
     coordinates: { lat: 29.949, lng: -90.0812 },
+    eventName: "Bourbon Street Live",
+    eventDate: "April 18, 2026",
     items: concertArenaItems,
   },
   {
@@ -1002,6 +1022,8 @@ export const venues: Venue[] = [
     city: "New Orleans, LA",
     address: "900 Convention Center Blvd, New Orleans, LA 70130",
     coordinates: { lat: 29.9461, lng: -90.0638 },
+    eventName: "Mardi Gras Masquerade Gala",
+    eventDate: "May 9, 2026",
     items: grandBallroomItems,
   },
   {
@@ -1016,6 +1038,8 @@ export const venues: Venue[] = [
     city: "New Orleans, LA",
     address: "Sugar Bowl Dr, New Orleans, LA 70112",
     coordinates: { lat: 29.9511, lng: -90.0812 },
+    eventName: "Saints vs Panthers",
+    eventDate: "October 4, 2026",
     items: stadiumItems,
   },
   {
@@ -1030,6 +1054,8 @@ export const venues: Venue[] = [
     city: "New Orleans, LA",
     address: "143 N Rampart St, New Orleans, LA 70112",
     coordinates: { lat: 29.9553, lng: -90.0745 },
+    eventName: "A Streetcar Named Desire",
+    eventDate: "June 20, 2026",
     items: theaterItems,
   },
   {
@@ -1044,6 +1070,8 @@ export const venues: Venue[] = [
     city: "New Orleans, LA",
     address: "5 Canal St, New Orleans, LA 70130",
     coordinates: { lat: 29.9536, lng: -90.0659 },
+    eventName: "French Quarter Garden Brunch",
+    eventDate: "May 30, 2026",
     items: gardenTerraceItems,
   },
   // Lafayette, LA
@@ -1059,6 +1087,8 @@ export const venues: Venue[] = [
     city: "Lafayette, LA",
     address: "1 Duproche St, Lafayette, LA 70501",
     coordinates: { lat: 30.2241, lng: -92.0198 },
+    eventName: "Lafayette Rooftop Cocktail Night",
+    eventDate: "April 17, 2026",
     items: rooftopLoungeItems,
   },
   {
@@ -1073,6 +1103,8 @@ export const venues: Venue[] = [
     city: "Lafayette, LA",
     address: "444 Cajundome Blvd, Lafayette, LA 70506",
     coordinates: { lat: 30.2088, lng: -92.0775 },
+    eventName: "Cajun Music Fest",
+    eventDate: "June 5, 2026",
     items: concertArenaItems,
   },
   {
@@ -1087,6 +1119,8 @@ export const venues: Venue[] = [
     city: "Lafayette, LA",
     address: "211 E Vermilion St, Lafayette, LA 70501",
     coordinates: { lat: 30.2235, lng: -92.0177 },
+    eventName: "Lafayette Charity Ball",
+    eventDate: "July 11, 2026",
     items: grandBallroomItems,
   },
   {
@@ -1101,6 +1135,8 @@ export const venues: Venue[] = [
     city: "Lafayette, LA",
     address: "201 Reinhardt Dr, Lafayette, LA 70506",
     coordinates: { lat: 30.2083, lng: -92.0731 },
+    eventName: "Ragin' Cajuns vs Louisiana Tech",
+    eventDate: "October 10, 2026",
     items: stadiumItems,
   },
   {
@@ -1115,6 +1151,8 @@ export const venues: Venue[] = [
     city: "Lafayette, LA",
     address: "101 Jefferson St, Lafayette, LA 70501",
     coordinates: { lat: 30.2251, lng: -92.0198 },
+    eventName: "Les Misérables",
+    eventDate: "August 7, 2026",
     items: theaterItems,
   },
   {
@@ -1129,6 +1167,8 @@ export const venues: Venue[] = [
     city: "Lafayette, LA",
     address: "500 Garfield St, Lafayette, LA 70501",
     coordinates: { lat: 30.226, lng: -92.022 },
+    eventName: "Vermilion Garden Spring Fest",
+    eventDate: "May 22, 2026",
     items: gardenTerraceItems,
   },
   // Lake Charles, LA
@@ -1144,6 +1184,8 @@ export const venues: Venue[] = [
     city: "Lake Charles, LA",
     address: "900 Lakeshore Dr, Lake Charles, LA 70601",
     coordinates: { lat: 30.2266, lng: -93.2174 },
+    eventName: "Lake Charles Rooftop Mixer",
+    eventDate: "April 24, 2026",
     items: rooftopLoungeItems,
   },
   {
@@ -1158,6 +1200,8 @@ export const venues: Venue[] = [
     city: "Lake Charles, LA",
     address: "900 N Lakeshore Dr, Lake Charles, LA 70601",
     coordinates: { lat: 30.2278, lng: -93.2189 },
+    eventName: "Southwest Louisiana Rock Night",
+    eventDate: "July 18, 2026",
     items: concertArenaItems,
   },
   {
@@ -1172,6 +1216,8 @@ export const venues: Venue[] = [
     city: "Lake Charles, LA",
     address: "505 N Lake Shore Dr, Lake Charles, LA 70601",
     coordinates: { lat: 30.2248, lng: -93.2162 },
+    eventName: "Lake Charles Charity Gala",
+    eventDate: "August 22, 2026",
     items: grandBallroomItems,
   },
   {
@@ -1186,6 +1232,8 @@ export const venues: Venue[] = [
     city: "Lake Charles, LA",
     address: "100 Pujo St, Lake Charles, LA 70601",
     coordinates: { lat: 30.2295, lng: -93.2159 },
+    eventName: "McNeese vs Nicholls",
+    eventDate: "October 17, 2026",
     items: stadiumItems,
   },
   {
@@ -1200,6 +1248,8 @@ export const venues: Venue[] = [
     city: "Lake Charles, LA",
     address: "1 W Sale Rd, Lake Charles, LA 70605",
     coordinates: { lat: 30.2312, lng: -93.2145 },
+    eventName: "Swamp Opera: A Louisiana Tale",
+    eventDate: "September 11, 2026",
     items: theaterItems,
   },
   {
@@ -1214,6 +1264,8 @@ export const venues: Venue[] = [
     city: "Lake Charles, LA",
     address: "612 Ford St, Lake Charles, LA 70601",
     coordinates: { lat: 30.228, lng: -93.2201 },
+    eventName: "Lakeside Garden Brunch",
+    eventDate: "June 13, 2026",
     items: gardenTerraceItems,
   },
   // Baton Rouge, LA
@@ -1229,6 +1281,8 @@ export const venues: Venue[] = [
     city: "Baton Rouge, LA",
     address: "100 Lafayette St, Baton Rouge, LA 70801",
     coordinates: { lat: 30.4515, lng: -91.1871 },
+    eventName: "Capitol Rooftop Happy Hour",
+    eventDate: "May 1, 2026",
     items: rooftopLoungeItems,
   },
   {
@@ -1243,6 +1297,8 @@ export const venues: Venue[] = [
     city: "Baton Rouge, LA",
     address: "275 S River Rd, Baton Rouge, LA 70802",
     coordinates: { lat: 30.4481, lng: -91.1954 },
+    eventName: "River Road Music Festival",
+    eventDate: "June 27, 2026",
     items: concertArenaItems,
   },
   {
@@ -1257,6 +1313,8 @@ export const venues: Venue[] = [
     city: "Baton Rouge, LA",
     address: "102 France St, Baton Rouge, LA 70802",
     coordinates: { lat: 30.4503, lng: -91.1888 },
+    eventName: "Baton Rouge Awards Gala",
+    eventDate: "September 19, 2026",
     items: grandBallroomItems,
   },
   {
@@ -1271,6 +1329,8 @@ export const venues: Venue[] = [
     city: "Baton Rouge, LA",
     address: "900 Nicholson Dr, Baton Rouge, LA 70802",
     coordinates: { lat: 30.4122, lng: -91.1836 },
+    eventName: "Southern Showdown Classic",
+    eventDate: "October 24, 2026",
     items: stadiumItems,
   },
   {
@@ -1285,6 +1345,8 @@ export const venues: Venue[] = [
     city: "Baton Rouge, LA",
     address: "427 Lafayette St, Baton Rouge, LA 70801",
     coordinates: { lat: 30.4519, lng: -91.1863 },
+    eventName: "The Color Purple",
+    eventDate: "August 14, 2026",
     items: theaterItems,
   },
   {
@@ -1299,6 +1361,8 @@ export const venues: Venue[] = [
     city: "Baton Rouge, LA",
     address: "301 Main St, Baton Rouge, LA 70801",
     coordinates: { lat: 30.4497, lng: -91.1874 },
+    eventName: "Red Stick Garden Festival",
+    eventDate: "May 8, 2026",
     items: gardenTerraceItems,
   },
   // Sulphur, LA
@@ -1314,6 +1378,8 @@ export const venues: Venue[] = [
     city: "Sulphur, LA",
     address: "100 Arnold Ave, Sulphur, LA 70663",
     coordinates: { lat: 30.2374, lng: -93.3774 },
+    eventName: "Sulphur Skyline Social",
+    eventDate: "June 19, 2026",
     items: rooftopLoungeItems,
   },
   {
@@ -1328,6 +1394,8 @@ export const venues: Venue[] = [
     city: "Sulphur, LA",
     address: "201 Beglis Pkwy, Sulphur, LA 70663",
     coordinates: { lat: 30.2352, lng: -93.3801 },
+    eventName: "Southwest Sound Festival",
+    eventDate: "July 25, 2026",
     items: concertArenaItems,
   },
   {
@@ -1342,6 +1410,8 @@ export const venues: Venue[] = [
     city: "Sulphur, LA",
     address: "400 Henning Dr, Sulphur, LA 70663",
     coordinates: { lat: 30.2401, lng: -93.3756 },
+    eventName: "Sulphur Founders Gala",
+    eventDate: "September 5, 2026",
     items: grandBallroomItems,
   },
   {
@@ -1356,6 +1426,8 @@ export const venues: Venue[] = [
     city: "Sulphur, LA",
     address: "500 Cypress St, Sulphur, LA 70663",
     coordinates: { lat: 30.2388, lng: -93.3812 },
+    eventName: "South Louisiana Rivalry Game",
+    eventDate: "November 14, 2026",
     items: stadiumItems,
   },
   {
@@ -1370,6 +1442,8 @@ export const venues: Venue[] = [
     city: "Sulphur, LA",
     address: "750 N Cities Service Hwy, Sulphur, LA 70663",
     coordinates: { lat: 30.2415, lng: -93.3768 },
+    eventName: "Grease: The Musical",
+    eventDate: "August 28, 2026",
     items: theaterItems,
   },
   {
@@ -1384,6 +1458,8 @@ export const venues: Venue[] = [
     city: "Sulphur, LA",
     address: "300 Maplewood Dr, Sulphur, LA 70663",
     coordinates: { lat: 30.2362, lng: -93.3789 },
+    eventName: "Creole Nature Trail Garden Party",
+    eventDate: "April 26, 2026",
     items: gardenTerraceItems,
   },
   // Westlake, LA
@@ -1399,6 +1475,8 @@ export const venues: Venue[] = [
     city: "Westlake, LA",
     address: "100 Sampson St, Westlake, LA 70669",
     coordinates: { lat: 30.2493, lng: -93.2571 },
+    eventName: "Westlake Rooftop Sunset Party",
+    eventDate: "May 29, 2026",
     items: rooftopLoungeItems,
   },
   {
@@ -1413,6 +1491,8 @@ export const venues: Venue[] = [
     city: "Westlake, LA",
     address: "200 Mulberry St, Westlake, LA 70669",
     coordinates: { lat: 30.2478, lng: -93.2589 },
+    eventName: "Contraband Bayou Music Fest",
+    eventDate: "August 1, 2026",
     items: concertArenaItems,
   },
   {
@@ -1427,6 +1507,8 @@ export const venues: Venue[] = [
     city: "Westlake, LA",
     address: "350 Sharlot St, Westlake, LA 70669",
     coordinates: { lat: 30.2512, lng: -93.2554 },
+    eventName: "Westlake Heritage Ball",
+    eventDate: "October 3, 2026",
     items: grandBallroomItems,
   },
   {
@@ -1441,6 +1523,8 @@ export const venues: Venue[] = [
     city: "Westlake, LA",
     address: "450 Commission Ave, Westlake, LA 70669",
     coordinates: { lat: 30.2501, lng: -93.2578 },
+    eventName: "Calcasieu Cup Classic",
+    eventDate: "November 21, 2026",
     items: stadiumItems,
   },
   {
@@ -1455,6 +1539,8 @@ export const venues: Venue[] = [
     city: "Westlake, LA",
     address: "600 Reeves St, Westlake, LA 70669",
     coordinates: { lat: 30.2487, lng: -93.2562 },
+    eventName: "Chicago: The Musical",
+    eventDate: "September 25, 2026",
     items: theaterItems,
   },
   {
@@ -1469,91 +1555,8 @@ export const venues: Venue[] = [
     city: "Westlake, LA",
     address: "250 Avenue A, Westlake, LA 70669",
     coordinates: { lat: 30.2469, lng: -93.2597 },
-    items: gardenTerraceItems,
-  },
-  // Moss Bluff, LA
-  {
-    id: "rooftop-lounge-mossbluff",
-    name: "Rooftop Lounge",
-    tagline: "Sky-high sips & bites",
-    description:
-      "An open-air retreat above the city with handcrafted cocktails and artisanal small plates.",
-    accentColor: "#c2884a",
-    bgGradient: "from-amber-900/80 to-orange-950/90",
-    venueType: "lounge",
-    city: "Moss Bluff, LA",
-    address: "100 Sam Houston Jones Pkwy, Moss Bluff, LA 70611",
-    coordinates: { lat: 30.3077, lng: -93.1985 },
-    items: rooftopLoungeItems,
-  },
-  {
-    id: "concert-arena-mossbluff",
-    name: "Concert Arena",
-    tagline: "Fuel the music",
-    description:
-      "Rock-ready bites and cold drinks to keep the energy going all night long.",
-    accentColor: "#e05c5c",
-    bgGradient: "from-red-900/80 to-rose-950/90",
-    venueType: "concert",
-    city: "Moss Bluff, LA",
-    address: "200 Prien Lake Rd, Moss Bluff, LA 70611",
-    coordinates: { lat: 30.3055, lng: -93.2012 },
-    items: concertArenaItems,
-  },
-  {
-    id: "grand-ballroom-mossbluff",
-    name: "Grand Ballroom",
-    tagline: "Where celebrations begin",
-    description:
-      "The pinnacle of event dining - premium spirits, full dinner service, and exquisite desserts.",
-    accentColor: "#7c5cbf",
-    bgGradient: "from-violet-950/80 to-indigo-950/90",
-    venueType: "ballroom",
-    city: "Moss Bluff, LA",
-    address: "350 Moeling St, Moss Bluff, LA 70611",
-    coordinates: { lat: 30.3091, lng: -93.1968 },
-    items: grandBallroomItems,
-  },
-  {
-    id: "sports-stadium-mossbluff",
-    name: "Sports Stadium",
-    tagline: "Game day eats & drinks",
-    description:
-      "Classic stadium fare and cold drinks - everything you need to cheer your team to victory.",
-    accentColor: "#2e7d9b",
-    bgGradient: "from-cyan-900/80 to-sky-950/90",
-    venueType: "sports",
-    city: "Moss Bluff, LA",
-    address: "500 W Prien Lake Rd, Moss Bluff, LA 70611",
-    coordinates: { lat: 30.3068, lng: -93.2031 },
-    items: stadiumItems,
-  },
-  {
-    id: "theater-mossbluff",
-    name: "Theater & Shows",
-    tagline: "Intermission indulgence",
-    description:
-      "Refined pre-show and intermission treats - from wine and spirits to sweet bites.",
-    accentColor: "#b8860b",
-    bgGradient: "from-yellow-900/80 to-amber-950/90",
-    venueType: "theater",
-    city: "Moss Bluff, LA",
-    address: "750 Gulf Hwy, Moss Bluff, LA 70611",
-    coordinates: { lat: 30.3102, lng: -93.1979 },
-    items: theaterItems,
-  },
-  {
-    id: "garden-terrace-mossbluff",
-    name: "Garden Terrace",
-    tagline: "Fresh flavors, open air",
-    description:
-      "A lush garden setting with farm-to-table fare, refreshing beverages, and relaxed elegance.",
-    accentColor: "#5a8a5e",
-    bgGradient: "from-emerald-900/80 to-green-950/90",
-    venueType: "terrace",
-    city: "Moss Bluff, LA",
-    address: "400 Creole Nature Trail, Moss Bluff, LA 70611",
-    coordinates: { lat: 30.3044, lng: -93.2018 },
+    eventName: "Bayou Garden Harvest Brunch",
+    eventDate: "June 26, 2026",
     items: gardenTerraceItems,
   },
   // South
@@ -1569,6 +1572,8 @@ export const venues: Venue[] = [
     city: "Nashville, TN",
     address: "501 Broadway, Nashville, TN 37203",
     coordinates: { lat: 36.1595, lng: -86.7786 },
+    eventName: "Broadway Beats Live",
+    eventDate: "July 4, 2026",
     items: concertArenaItems,
   },
   {
@@ -1583,6 +1588,8 @@ export const venues: Venue[] = [
     city: "Dallas, TX",
     address: "1 AT&T Way, Arlington, TX 76011",
     coordinates: { lat: 32.7473, lng: -97.0945 },
+    eventName: "Cowboys vs Eagles",
+    eventDate: "October 18, 2026",
     items: stadiumItems,
   },
   {
@@ -1597,6 +1604,8 @@ export const venues: Venue[] = [
     city: "Houston, TX",
     address: "510 Preston St, Houston, TX 77002",
     coordinates: { lat: 29.7604, lng: -95.3698 },
+    eventName: "Hamilton",
+    eventDate: "September 12, 2026",
     items: theaterItems,
   },
   // Midwest
@@ -1612,6 +1621,8 @@ export const venues: Venue[] = [
     city: "Chicago, IL",
     address: "301 E North Water St, Chicago, IL 60611",
     coordinates: { lat: 41.8919, lng: -87.6181 },
+    eventName: "Chicago Arts & Culture Gala",
+    eventDate: "November 7, 2026",
     items: grandBallroomItems,
   },
   {
@@ -1626,6 +1637,8 @@ export const venues: Venue[] = [
     city: "Detroit, MI",
     address: "2211 Woodward Ave, Detroit, MI 48201",
     coordinates: { lat: 42.3314, lng: -83.0458 },
+    eventName: "Motown: The Musical",
+    eventDate: "August 21, 2026",
     items: theaterItems,
   },
   {
@@ -1640,6 +1653,8 @@ export const venues: Venue[] = [
     city: "Minneapolis, MN",
     address: "600 1st Ave N, Minneapolis, MN 55403",
     coordinates: { lat: 44.9778, lng: -93.265 },
+    eventName: "Twin Cities Sound Fest",
+    eventDate: "July 11, 2026",
     items: concertArenaItems,
   },
   // Mountain / Southwest
@@ -1655,6 +1670,8 @@ export const venues: Venue[] = [
     city: "Denver, CO",
     address: "1701 Bryant St, Denver, CO 80204",
     coordinates: { lat: 39.7392, lng: -105.0002 },
+    eventName: "Broncos vs Chiefs",
+    eventDate: "December 6, 2026",
     items: stadiumItems,
   },
   {
@@ -1669,6 +1686,8 @@ export const venues: Venue[] = [
     city: "Las Vegas, NV",
     address: "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
     coordinates: { lat: 36.1147, lng: -115.1728 },
+    eventName: "Vegas Skyline Cocktail Night",
+    eventDate: "April 11, 2026",
     items: rooftopLoungeItems,
   },
   // Las Vegas, NV
@@ -1684,6 +1703,8 @@ export const venues: Venue[] = [
     city: "Las Vegas, NV",
     address: "3950 S Las Vegas Blvd, Las Vegas, NV 89119",
     coordinates: { lat: 36.0942, lng: -115.1745 },
+    eventName: "Vegas Neon Music Festival",
+    eventDate: "May 16, 2026",
     items: concertArenaItems,
   },
   {
@@ -1698,6 +1719,8 @@ export const venues: Venue[] = [
     city: "Las Vegas, NV",
     address: "3131 S Las Vegas Blvd, Las Vegas, NV 89109",
     coordinates: { lat: 36.1246, lng: -115.1722 },
+    eventName: "Sin City Black Tie Gala",
+    eventDate: "June 6, 2026",
     items: grandBallroomItems,
   },
   {
@@ -1712,6 +1735,8 @@ export const venues: Venue[] = [
     city: "Las Vegas, NV",
     address: "3333 Al Davis Way, Las Vegas, NV 89118",
     coordinates: { lat: 36.0909, lng: -115.1833 },
+    eventName: "Raiders vs Chargers",
+    eventDate: "October 11, 2026",
     items: stadiumItems,
   },
   {
@@ -1726,6 +1751,8 @@ export const venues: Venue[] = [
     city: "Las Vegas, NV",
     address: "3667 S Las Vegas Blvd, Las Vegas, NV 89109",
     coordinates: { lat: 36.1015, lng: -115.1726 },
+    eventName: "Cirque Dreams: Vegas",
+    eventDate: "July 18, 2026",
     items: theaterItems,
   },
   {
@@ -1740,6 +1767,8 @@ export const venues: Venue[] = [
     city: "Las Vegas, NV",
     address: "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
     coordinates: { lat: 36.1147, lng: -115.1738 },
+    eventName: "Vegas Garden Oasis Brunch",
+    eventDate: "August 29, 2026",
     items: gardenTerraceItems,
   },
   {
@@ -1754,6 +1783,8 @@ export const venues: Venue[] = [
     city: "Phoenix, AZ",
     address: "401 W Jefferson St, Phoenix, AZ 85003",
     coordinates: { lat: 33.4484, lng: -112.074 },
+    eventName: "Desert Bloom Garden Festival",
+    eventDate: "April 4, 2026",
     items: gardenTerraceItems,
   },
   // West Coast
@@ -1769,6 +1800,8 @@ export const venues: Venue[] = [
     city: "Los Angeles, CA",
     address: "8820 Sunset Blvd, West Hollywood, CA 90069",
     coordinates: { lat: 34.0901, lng: -118.3877 },
+    eventName: "Sunset Strip Garden Party",
+    eventDate: "May 23, 2026",
     items: gardenTerraceItems,
   },
   {
@@ -1783,6 +1816,8 @@ export const venues: Venue[] = [
     city: "San Francisco, CA",
     address: "1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102",
     coordinates: { lat: 37.7749, lng: -122.4194 },
+    eventName: "Hamilton: San Francisco",
+    eventDate: "October 31, 2026",
     items: theaterItems,
   },
   {
@@ -1797,6 +1832,8 @@ export const venues: Venue[] = [
     city: "Seattle, WA",
     address: "800 Occidental Ave S, Seattle, WA 98134",
     coordinates: { lat: 47.5951, lng: -122.3316 },
+    eventName: "Emerald City Gala",
+    eventDate: "November 14, 2026",
     items: grandBallroomItems,
   },
   {
@@ -1811,6 +1848,72 @@ export const venues: Venue[] = [
     city: "Portland, OR",
     address: "1 N Center Ct St, Portland, OR 97227",
     coordinates: { lat: 45.5316, lng: -122.6668 },
+    eventName: "Portland Music Festival",
+    eventDate: "August 8, 2026",
+    items: concertArenaItems,
+  },
+  {
+    id: "sports-stadium-lakecharles-eventcenter",
+    name: "Lake Charles Event Center",
+    tagline: "Events come alive here",
+    description:
+      "Premium stadium fare for concerts, sports, and special events in the heart of Lake Charles.",
+    accentColor: "#f59e0b",
+    bgGradient: "from-amber-900/80 to-yellow-950/90",
+    venueType: "sports",
+    city: "Lake Charles, LA",
+    address: "900 Lakeshore Dr, Lake Charles, LA 70601",
+    coordinates: { lat: 30.2266, lng: -93.2174 },
+    eventName: "Lakeshore Music Festival",
+    eventDate: "May 10, 2026",
+    items: stadiumItems,
+  },
+  {
+    id: "sports-stadium-lsu",
+    name: "LSU Stadium",
+    tagline: "Geaux Tigers",
+    description:
+      "Tiger Stadium game-day grub and ice-cold drinks for the most passionate fans in college football.",
+    accentColor: "#7c3aed",
+    bgGradient: "from-purple-950/80 to-yellow-900/60",
+    venueType: "sports",
+    city: "Baton Rouge, LA",
+    address: "900 W Chimes St, Baton Rouge, LA 70803",
+    coordinates: { lat: 30.4122, lng: -91.1837 },
+    eventName: "LSU vs Alabama",
+    eventDate: "November 7, 2026",
+    items: stadiumItems,
+  },
+  {
+    id: "sports-stadium-saints",
+    name: "New Orleans Saints Stadium",
+    tagline: "Who Dat Nation",
+    description:
+      "Caesars Superdome game-day food and drinks for Saints fans in the heart of New Orleans.",
+    accentColor: "#d4a017",
+    bgGradient: "from-yellow-900/80 to-neutral-950/90",
+    venueType: "sports",
+    city: "New Orleans, LA",
+    address: "1500 Sugar Bowl Dr, New Orleans, LA 70112",
+    coordinates: { lat: 29.9511, lng: -90.0812 },
+    eventName: "Saints vs Panthers",
+    eventDate: "October 4, 2026",
+    items: stadiumItems,
+  },
+  {
+    id: "concert-arena-burtoncoliseum",
+    name: "Burton Coliseum",
+    tagline: "Lake Charles' premier event venue",
+    description:
+      "From rodeos to rock concerts — enjoy classic arena snacks and cold drinks at Burton Coliseum.",
+    accentColor: "#e05c5c",
+    bgGradient: "from-red-900/80 to-rose-950/90",
+    venueType: "concert",
+    city: "Lake Charles, LA",
+    address: "7001 Gulf Hwy, Lake Charles, LA 70607",
+    coordinates: { lat: 30.1587, lng: -93.2199 },
+    eventName: "Cajun Country Rodeo & Concert",
+    eventDate: "June 14, 2026",
     items: concertArenaItems,
   },
 ];
