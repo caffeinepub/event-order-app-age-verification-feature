@@ -17,13 +17,7 @@ export interface Venue {
   description: string;
   accentColor: string;
   bgGradient: string;
-  venueType:
-    | "lounge"
-    | "terrace"
-    | "ballroom"
-    | "concert"
-    | "sports"
-    | "theater";
+  venueType: "terrace" | "ballroom" | "concert" | "sports" | "theater";
   city: string;
   address: string;
   coordinates: { lat: number; lng: number };
@@ -31,109 +25,6 @@ export interface Venue {
   eventDate: string;
   items: MenuItem[];
 }
-
-const rooftopLoungeItems: MenuItem[] = [
-  {
-    id: 101,
-    name: "Sunset Margarita",
-    description: "Reposado tequila, fresh lime, agave nectar, smoked salt rim",
-    price: 16,
-    category: "Alcohol",
-    containsAlcohol: true,
-    emoji: "🍹",
-  },
-  {
-    id: 102,
-    name: "Rooftop Mule",
-    description: "Premium vodka, ginger beer, fresh mint, lime",
-    price: 15,
-    category: "Alcohol",
-    containsAlcohol: true,
-    emoji: "🥃",
-  },
-  {
-    id: 103,
-    name: "Aperol Spritz",
-    description: "Aperol, prosecco, soda water, orange slice",
-    price: 14,
-    category: "Alcohol",
-    containsAlcohol: true,
-    emoji: "🥂",
-  },
-  {
-    id: 104,
-    name: "Craft IPA",
-    description: "Local hoppy India Pale Ale with citrus undertones",
-    price: 9,
-    category: "Alcohol",
-    containsAlcohol: true,
-    emoji: "🍺",
-  },
-  {
-    id: 105,
-    name: "Rose Wine",
-    description: "Chilled Provence-style rose, light and crisp",
-    price: 13,
-    category: "Alcohol",
-    containsAlcohol: true,
-    emoji: "🍷",
-  },
-  {
-    id: 106,
-    name: "Sparkling Lemonade",
-    description: "House-made lemonade with fresh mint and soda",
-    price: 7,
-    category: "Drinks",
-    containsAlcohol: false,
-    emoji: "🍋",
-  },
-  {
-    id: 107,
-    name: "Cold Brew Coffee",
-    description: "Smooth 12-hour cold brew with oat milk",
-    price: 8,
-    category: "Drinks",
-    containsAlcohol: false,
-    emoji: "☕",
-  },
-  {
-    id: 108,
-    name: "Burrata Bruschetta",
-    description:
-      "Toasted sourdough, creamy burrata, heirloom tomatoes, basil oil",
-    price: 18,
-    category: "Food",
-    containsAlcohol: false,
-    emoji: "🫓",
-  },
-  {
-    id: 109,
-    name: "Truffle Fries",
-    description: "Hand-cut fries, black truffle oil, pecorino, fresh herbs",
-    price: 14,
-    category: "Food",
-    containsAlcohol: false,
-    emoji: "🍟",
-  },
-  {
-    id: 110,
-    name: "Charcuterie Board",
-    description: "Cured meats, aged cheeses, cornichons, artisan crackers",
-    price: 28,
-    category: "Food",
-    containsAlcohol: false,
-    emoji: "🧀",
-  },
-  {
-    id: 111,
-    name: "Shrimp Cocktail",
-    description: "Chilled jumbo shrimp, house cocktail sauce, lemon",
-    price: 22,
-    category: "Food",
-    containsAlcohol: false,
-    emoji: "🍤",
-  },
-];
 
 const gardenTerraceItems: MenuItem[] = [
   {
@@ -1046,30 +937,13 @@ export const venues: Venue[] = [
       "Premium casino floor service and hotel lounge dining at the iconic Golden Nugget Lake Charles - craft cocktails, fine bites, and world-class hospitality.",
     accentColor: "#d4a017",
     bgGradient: "from-yellow-900/80 to-amber-950/90",
-    venueType: "lounge",
+    venueType: "ballroom",
     city: "Lake Charles, LA",
     address: "2550 Golden Nugget Blvd, Lake Charles, LA 70601",
     coordinates: { lat: 30.2016, lng: -93.1871 },
     eventName: "Golden Nugget Casino Night Gala",
     eventDate: "April 19, 2026",
     items: goldenNuggetItems,
-  },
-  // Northeast
-  {
-    id: "rooftop-lounge",
-    name: "Rooftop Lounge",
-    tagline: "Sky-high sips & bites",
-    description:
-      "An open-air retreat above the city with handcrafted cocktails and artisanal small plates.",
-    accentColor: "#c2884a",
-    bgGradient: "from-amber-900/80 to-orange-950/90",
-    venueType: "lounge",
-    city: "New York, NY",
-    address: "230 5th Ave, New York, NY 10001",
-    coordinates: { lat: 40.7451, lng: -73.9874 },
-    eventName: "Manhattan Mixology Night",
-    eventDate: "April 25, 2026",
-    items: rooftopLoungeItems,
   },
   {
     id: "theater-boston",
@@ -1121,22 +995,6 @@ export const venues: Venue[] = [
     items: concertArenaItems,
   },
   {
-    id: "rooftop-lounge-miami",
-    name: "Rooftop Lounge",
-    tagline: "Sky-high sips & bites",
-    description:
-      "An open-air retreat above the city with handcrafted cocktails and artisanal small plates.",
-    accentColor: "#c2884a",
-    bgGradient: "from-amber-900/80 to-orange-950/90",
-    venueType: "lounge",
-    city: "Miami, FL",
-    address: "1601 Collins Ave, Miami Beach, FL 33139",
-    coordinates: { lat: 25.7617, lng: -80.1918 },
-    eventName: "Miami Sunset Rooftop Party",
-    eventDate: "June 6, 2026",
-    items: rooftopLoungeItems,
-  },
-  {
     id: "sports-stadium-charlotte",
     name: "Sports Stadium",
     tagline: "Game day eats & drinks",
@@ -1151,23 +1009,6 @@ export const venues: Venue[] = [
     eventName: "Panthers vs Cowboys",
     eventDate: "September 13, 2026",
     items: stadiumItems,
-  },
-  // Louisiana (featured)
-  {
-    id: "rooftop-lounge-neworleans",
-    name: "Rooftop Lounge",
-    tagline: "Sky-high sips & bites",
-    description:
-      "An open-air retreat above the city with handcrafted cocktails and artisanal small plates.",
-    accentColor: "#c2884a",
-    bgGradient: "from-amber-900/80 to-orange-950/90",
-    venueType: "lounge",
-    city: "New Orleans, LA",
-    address: "700 Tchoupitoulas St, New Orleans, LA 70130",
-    coordinates: { lat: 29.9443, lng: -90.0702 },
-    eventName: "New Orleans Rooftop Cocktail Night",
-    eventDate: "April 11, 2026",
-    items: rooftopLoungeItems,
   },
   {
     id: "concert-arena-neworleans",
@@ -1249,23 +1090,6 @@ export const venues: Venue[] = [
     eventDate: "May 30, 2026",
     items: gardenTerraceItems,
   },
-  // Lafayette, LA
-  {
-    id: "rooftop-lounge-lafayette",
-    name: "Rooftop Lounge",
-    tagline: "Sky-high sips & bites",
-    description:
-      "An open-air retreat above the city with handcrafted cocktails and artisanal small plates.",
-    accentColor: "#c2884a",
-    bgGradient: "from-amber-900/80 to-orange-950/90",
-    venueType: "lounge",
-    city: "Lafayette, LA",
-    address: "1 Duproche St, Lafayette, LA 70501",
-    coordinates: { lat: 30.2241, lng: -92.0198 },
-    eventName: "Lafayette Rooftop Cocktail Night",
-    eventDate: "April 17, 2026",
-    items: rooftopLoungeItems,
-  },
   {
     id: "concert-arena-lafayette",
     name: "Concert Arena",
@@ -1345,23 +1169,6 @@ export const venues: Venue[] = [
     eventName: "Vermilion Garden Spring Fest",
     eventDate: "May 22, 2026",
     items: gardenTerraceItems,
-  },
-  // Lake Charles, LA
-  {
-    id: "rooftop-lounge-lakecharles",
-    name: "Rooftop Lounge",
-    tagline: "Sky-high sips & bites",
-    description:
-      "An open-air retreat above the city with handcrafted cocktails and artisanal small plates.",
-    accentColor: "#c2884a",
-    bgGradient: "from-amber-900/80 to-orange-950/90",
-    venueType: "lounge",
-    city: "Lake Charles, LA",
-    address: "900 Lakeshore Dr, Lake Charles, LA 70601",
-    coordinates: { lat: 30.2266, lng: -93.2174 },
-    eventName: "Lake Charles Rooftop Mixer",
-    eventDate: "April 24, 2026",
-    items: rooftopLoungeItems,
   },
   {
     id: "concert-arena-lakecharles",
@@ -1443,23 +1250,6 @@ export const venues: Venue[] = [
     eventDate: "June 13, 2026",
     items: gardenTerraceItems,
   },
-  // Baton Rouge, LA
-  {
-    id: "rooftop-lounge-batonrouge",
-    name: "Rooftop Lounge",
-    tagline: "Sky-high sips & bites",
-    description:
-      "An open-air retreat above the city with handcrafted cocktails and artisanal small plates.",
-    accentColor: "#c2884a",
-    bgGradient: "from-amber-900/80 to-orange-950/90",
-    venueType: "lounge",
-    city: "Baton Rouge, LA",
-    address: "100 Lafayette St, Baton Rouge, LA 70801",
-    coordinates: { lat: 30.4515, lng: -91.1871 },
-    eventName: "Capitol Rooftop Happy Hour",
-    eventDate: "May 1, 2026",
-    items: rooftopLoungeItems,
-  },
   {
     id: "concert-arena-batonrouge",
     name: "Concert Arena",
@@ -1539,23 +1329,6 @@ export const venues: Venue[] = [
     eventName: "Red Stick Garden Festival",
     eventDate: "May 8, 2026",
     items: gardenTerraceItems,
-  },
-  // Sulphur, LA
-  {
-    id: "rooftop-lounge-sulphur",
-    name: "Rooftop Lounge",
-    tagline: "Sky-high sips & bites",
-    description:
-      "An open-air retreat above the city with handcrafted cocktails and artisanal small plates.",
-    accentColor: "#c2884a",
-    bgGradient: "from-amber-900/80 to-orange-950/90",
-    venueType: "lounge",
-    city: "Sulphur, LA",
-    address: "100 Arnold Ave, Sulphur, LA 70663",
-    coordinates: { lat: 30.2374, lng: -93.3774 },
-    eventName: "Sulphur Skyline Social",
-    eventDate: "June 19, 2026",
-    items: rooftopLoungeItems,
   },
   {
     id: "concert-arena-sulphur",
@@ -1751,22 +1524,6 @@ export const venues: Venue[] = [
     eventName: "Broncos vs Chiefs",
     eventDate: "December 6, 2026",
     items: stadiumItems,
-  },
-  {
-    id: "rooftop-lounge-lasvegas",
-    name: "Rooftop Lounge",
-    tagline: "Sky-high sips & bites",
-    description:
-      "An open-air retreat above the city with handcrafted cocktails and artisanal small plates.",
-    accentColor: "#c2884a",
-    bgGradient: "from-amber-900/80 to-orange-950/90",
-    venueType: "lounge",
-    city: "Las Vegas, NV",
-    address: "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
-    coordinates: { lat: 36.1147, lng: -115.1728 },
-    eventName: "Vegas Skyline Cocktail Night",
-    eventDate: "April 11, 2026",
-    items: rooftopLoungeItems,
   },
   // Las Vegas, NV
   {
@@ -2009,6 +1766,22 @@ export const venues: Venue[] = [
     eventName: "Astros vs Yankees",
     eventDate: "April 18, 2026",
     items: minuteMaidItems,
+  },
+  {
+    id: "cajun-dome-lafayette",
+    name: "Cajun Dome",
+    tagline: "Home of the Ragin' Cajuns",
+    description:
+      "The premier multi-purpose arena in Acadiana, hosting concerts, sporting events, and major entertainment.",
+    accentColor: "#cc0000",
+    bgGradient: "from-red-900/80 to-gray-900/90",
+    venueType: "sports",
+    city: "Lafayette",
+    address: "444 Cajundome Blvd, Lafayette, LA 70506",
+    coordinates: { lat: 30.2097, lng: -92.0198 },
+    eventName: "Ragin' Cajuns Basketball",
+    eventDate: "March 20, 2026",
+    items: stadiumItems,
   },
 ];
 

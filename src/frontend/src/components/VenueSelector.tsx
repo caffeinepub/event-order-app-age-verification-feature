@@ -9,7 +9,6 @@ interface VenueSelectorProps {
 }
 
 const venueImages: Record<string, string> = {
-  "rooftop-lounge": "🌆",
   "garden-terrace": "🌿",
   "grand-ballroom": "✨",
   "concert-arena": "🎸",
@@ -35,7 +34,6 @@ export default function VenueSelector({ onSelectVenue }: VenueSelectorProps) {
 
   const venueTypeLabels: Record<string, string> = {
     All: "All Venues",
-    lounge: "Lounges",
     terrace: "Terraces",
     ballroom: "Ballrooms",
     concert: "Concerts",
