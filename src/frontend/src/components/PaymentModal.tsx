@@ -16,6 +16,7 @@ import {
   CreditCard,
   Lock,
   MapPin,
+  Receipt,
   X,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
@@ -52,6 +53,30 @@ function getCardBrand(number: string): string {
   return "";
 }
 
+function generateOrderNumber(): string {
+  return `EO-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
+}
+
+async function requestAndSendNotification(orderNumber: string) {
+  if (!("Notification" in window)) return;
+
+  let permission = Notification.permission;
+  if (permission === "default") {
+    permission = await Notification.requestPermission();
+  }
+
+  if (permission === "granted") {
+    // Simulate order ready after ~30 seconds (demo)
+    setTimeout(() => {
+      new Notification("Your order is ready! 🎉", {
+        body: `Order ${orderNumber} is ready for pickup at the venue counter.`,
+        icon: "/favicon.ico",
+        tag: orderNumber,
+      });
+    }, 30000);
+  }
+}
+
 export default function PaymentModal({
   isOpen,
   onClose,
@@ -69,6 +94,8 @@ export default function PaymentModal({
     "idle" | "success" | "error"
   >("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [orderNumber] = useState(generateOrderNumber);
+  const [orderTime] = useState(() => new Date().toLocaleString());
 
   const cardBrand = getCardBrand(cardNumber);
 
@@ -85,18 +112,18 @@ export default function PaymentModal({
     setIsProcessing(true);
     setErrorMsg("");
 
-    // Simulate payment processing (1.5s)
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    // Simulate 95% success rate for demo purposes
     const success = Math.random() > 0.05;
 
     if (success) {
       setPaymentStatus("success");
+      // Request notification permission and schedule order-ready notification
+      requestAndSendNotification(orderNumber);
       setTimeout(() => {
         onPaymentSuccess();
         handleClose();
-      }, 4000);
+      }, 6000);
     } else {
       setPaymentStatus("error");
       setErrorMsg(
@@ -121,13 +148,13 @@ export default function PaymentModal({
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent
         data-ocid="payment.modal"
-        className="max-w-md p-0 overflow-hidden"
+        className="max-w-md p-0 overflow-hidden max-h-[90vh] overflow-y-auto"
         onInteractOutside={(e) => {
           if (isProcessing || paymentStatus === "success") e.preventDefault();
         }}
       >
         {/* Header */}
-        <div className="bg-foreground px-6 py-5">
+        <div className="bg-foreground px-6 py-5 sticky top-0 z-10">
           <DialogHeader>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -135,7 +162,9 @@ export default function PaymentModal({
                   <CreditCard className="h-4 w-4 text-primary-foreground" />
                 </div>
                 <DialogTitle className="text-lg font-semibold text-primary-foreground">
-                  Secure Payment
+                  {paymentStatus === "success"
+                    ? "Order Receipt"
+                    : "Secure Payment"}
                 </DialogTitle>
               </div>
               <button
@@ -155,28 +184,70 @@ export default function PaymentModal({
           {paymentStatus === "success" ? (
             <motion.div
               key="success"
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="flex flex-col items-center gap-5 px-6 py-10 text-center"
+              className="flex flex-col items-center gap-5 px-6 py-8"
               data-ocid="payment.success_state"
             >
+              {/* Success icon */}
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
                 <CheckCircle2 className="h-10 w-10 text-green-600" />
               </div>
-              <div>
+              <div className="text-center">
                 <h3 className="text-xl font-bold text-foreground">
-                  Order Placed!
+                  Payment Confirmed!
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Your payment of{" "}
-                  <span className="font-semibold text-foreground">
-                    ${total.toFixed(2)}
-                  </span>{" "}
-                  was successful.
+                  Your order has been placed successfully.
                 </p>
               </div>
 
-              {/* Notification info */}
+              {/* Receipt */}
+              <div className="w-full rounded-xl border bg-muted/30 overflow-hidden">
+                <div className="flex items-center gap-2 px-4 py-3 bg-muted/60 border-b">
+                  <Receipt className="h-4 w-4 text-muted-foreground" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    Receipt
+                  </span>
+                </div>
+                <div className="px-4 py-3 space-y-1.5">
+                  <div className="flex justify-between text-xs text-muted-foreground">
+                    <span>Confirmation #</span>
+                    <span className="font-mono font-bold text-primary text-sm">
+                      {orderNumber}
+                    </span>
+                  </div>
+                  <div className="flex justify-between text-xs text-muted-foreground">
+                    <span>Date &amp; Time</span>
+                    <span className="text-foreground">{orderTime}</span>
+                  </div>
+                </div>
+                <Separator />
+                <div className="px-4 py-3 space-y-1.5">
+                  {items.map((item) => (
+                    <div key={item.id} className="flex justify-between text-sm">
+                      <span className="text-foreground/80">
+                        {item.name}
+                        <span className="text-muted-foreground ml-1">
+                          x{item.quantity}
+                        </span>
+                      </span>
+                      <span className="font-medium">
+                        ${(item.price * item.quantity).toFixed(2)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <Separator />
+                <div className="flex justify-between px-4 py-3">
+                  <span className="font-bold text-foreground">Total Paid</span>
+                  <span className="font-bold text-green-600 text-lg">
+                    ${total.toFixed(2)}
+                  </span>
+                </div>
+              </div>
+
+              {/* Notification & Pickup info */}
               <div className="w-full space-y-3">
                 <div className="flex items-start gap-3 rounded-xl bg-blue-50 border border-blue-100 px-4 py-3 text-left">
                   <Bell className="h-5 w-5 text-blue-600 mt-0.5 shrink-0" />
@@ -185,8 +256,8 @@ export default function PaymentModal({
                       You'll be notified when it's ready
                     </p>
                     <p className="text-xs text-blue-700 mt-0.5">
-                      We'll send you a notification as soon as your order is
-                      prepared.
+                      Allow notifications when prompted so we can alert you the
+                      moment your order is prepared.
                     </p>
                   </div>
                 </div>

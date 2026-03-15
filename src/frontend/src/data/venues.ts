@@ -927,6 +927,141 @@ const goldenNuggetItems: MenuItem[] = [
   },
 ];
 
+const tMobileArenaItems: MenuItem[] = [
+  {
+    id: 2001,
+    name: "Golden Knights Lager",
+    description: "Official team lager brewed for game nights, 20oz draft",
+    price: 14,
+    category: "Alcohol",
+    containsAlcohol: true,
+    emoji: "🍺",
+  },
+  {
+    id: 2002,
+    name: "Vegas Craft IPA",
+    description: "Local Nevada craft IPA, hoppy and bold, 16oz can",
+    price: 12,
+    category: "Alcohol",
+    containsAlcohol: true,
+    emoji: "🍻",
+  },
+  {
+    id: 2003,
+    name: "Knights Victory Shot",
+    description: "Tequila shot with lime and gold sugar rim",
+    price: 10,
+    category: "Alcohol",
+    containsAlcohol: true,
+    emoji: "🥃",
+  },
+  {
+    id: 2004,
+    name: "Vegas Strip Cocktail",
+    description:
+      "Vodka, blue curacao, pineapple juice, lime -- Vegas signature",
+    price: 16,
+    category: "Alcohol",
+    containsAlcohol: true,
+    emoji: "🍹",
+  },
+  {
+    id: 2005,
+    name: "Craft Margarita",
+    description: "Premium tequila, triple sec, fresh lime, salted rim",
+    price: 15,
+    category: "Alcohol",
+    containsAlcohol: true,
+    emoji: "🍸",
+  },
+  {
+    id: 2006,
+    name: "Soft Drink",
+    description: "Coke, Diet Coke, Sprite, Lemonade -- 24oz",
+    price: 6,
+    category: "Drinks",
+    containsAlcohol: false,
+    emoji: "🥤",
+  },
+  {
+    id: 2007,
+    name: "Bottled Water",
+    description: "Chilled 16oz spring water",
+    price: 5,
+    category: "Drinks",
+    containsAlcohol: false,
+    emoji: "💧",
+  },
+  {
+    id: 2008,
+    name: "Vegas Energy Drink",
+    description: "Monster or Red Bull -- keep your energy up through overtime",
+    price: 7,
+    category: "Drinks",
+    containsAlcohol: false,
+    emoji: "⚡",
+  },
+  {
+    id: 2009,
+    name: "VGK Signature Hot Dog",
+    description:
+      "All-beef frank with golden mustard and Knights relish, toasted bun",
+    price: 10,
+    category: "Food",
+    containsAlcohol: false,
+    emoji: "🌭",
+  },
+  {
+    id: 2010,
+    name: "Loaded Nachos",
+    description:
+      "Crispy tortilla chips with queso, jalapeños, sour cream, and pico",
+    price: 13,
+    category: "Food",
+    containsAlcohol: false,
+    emoji: "🧀",
+  },
+  {
+    id: 2011,
+    name: "Arena Burger",
+    description:
+      "Half-pound beef patty, American cheese, lettuce, tomato, special sauce",
+    price: 15,
+    category: "Food",
+    containsAlcohol: false,
+    emoji: "🍔",
+  },
+  {
+    id: 2012,
+    name: "Vegas BBQ Brisket Sandwich",
+    description:
+      "Slow-smoked brisket on brioche bun with coleslaw and BBQ sauce",
+    price: 17,
+    category: "Food",
+    containsAlcohol: false,
+    emoji: "🥩",
+  },
+  {
+    id: 2013,
+    name: "Soft Pretzel",
+    description: "Giant warm pretzel with cheddar dipping sauce",
+    price: 9,
+    category: "Food",
+    containsAlcohol: false,
+    emoji: "🥨",
+  },
+  {
+    id: 2014,
+    name: "Popcorn",
+    description:
+      "Freshly popped, buttered popcorn in a collectible Golden Knights cup",
+    price: 8,
+    category: "Food",
+    containsAlcohol: false,
+    emoji: "🍿",
+  },
+];
+
 export const venues: Venue[] = [
   // Golden Nugget Lake Charles (featured)
   {
@@ -1782,6 +1917,23 @@ export const venues: Venue[] = [
     eventName: "Ragin' Cajuns Basketball",
     eventDate: "March 20, 2026",
     items: stadiumItems,
+  },
+
+  {
+    id: "t-mobile-arena-lasvegas",
+    name: "T-Mobile Arena",
+    tagline: "Where Vegas comes to play",
+    description:
+      "Premium concessions and craft cocktails at Las Vegas's premier indoor arena -- home of the Golden Knights.",
+    accentColor: "#b5951a",
+    bgGradient: "from-yellow-900/80 to-gray-950/90",
+    venueType: "sports",
+    city: "Las Vegas, NV",
+    address: "3780 S Las Vegas Blvd, Las Vegas, NV 89158",
+    coordinates: { lat: 36.1028, lng: -115.1784 },
+    eventName: "Golden Knights vs Kings",
+    eventDate: "April 12, 2026",
+    items: tMobileArenaItems,
   },
 ];
 

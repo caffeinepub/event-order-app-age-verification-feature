@@ -9,11 +9,19 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { QrCode } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { toast } from "sonner";
 import type { Category, Venue } from "../data/venues";
 import { useCartStore } from "../store/cartStore";
+import QRScannerModal from "./QRScannerModal";
 
 type FilterTab = "All" | Category;
 
@@ -23,6 +31,7 @@ interface ProductCatalogProps {
 
 export default function ProductCatalog({ venue }: ProductCatalogProps) {
   const [activeTab, setActiveTab] = useState<FilterTab>("All");
+  const [qrOpen, setQrOpen] = useState(false);
   const addItem = useCartStore((state) => state.addItem);
 
   const filtered =
@@ -43,10 +52,11 @@ export default function ProductCatalog({ venue }: ProductCatalogProps) {
 
   return (
     <section className="container py-10">
-      <div className="mb-8">
+      <div className="mb-8 flex items-center gap-3">
         <Tabs
           value={activeTab}
           onValueChange={(v) => setActiveTab(v as FilterTab)}
+          className="flex-1"
         >
           <TabsList
             className="h-11 gap-1 rounded-xl p-1"
@@ -75,6 +85,24 @@ export default function ProductCatalog({ venue }: ProductCatalogProps) {
             )}
           </TabsList>
         </Tabs>
+
+        {/* QR Scanner button */}
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-11 w-11 shrink-0 rounded-xl"
+                onClick={() => setQrOpen(true)}
+                data-ocid="catalog.qr_scan_button"
+              >
+                <QrCode className="h-5 w-5" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>Scan QR Code</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
 
       <AnimatePresence mode="wait">
@@ -156,6 +184,8 @@ export default function ProductCatalog({ venue }: ProductCatalogProps) {
           ))}
         </motion.div>
       </AnimatePresence>
+
+      <QRScannerModal isOpen={qrOpen} onClose={() => setQrOpen(false)} />
     </section>
   );
 }

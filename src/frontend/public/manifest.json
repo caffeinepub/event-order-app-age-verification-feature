@@ -1,0 +1,18 @@
+{
+  "name": "Event Order",
+  "short_name": "Event Order",
+  "description": "Order food, drinks, and beverages at your favorite venues and events.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/generated/event-order-icon.dim_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
